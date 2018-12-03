@@ -1,0 +1,22 @@
+
+.sidebar
+  .sidebar__user
+    .sidebar__user__contents
+      .sidebar__user__contents__name
+        =current_user.name
+      %ul
+        %li
+          = link_to edit_user_path(current_user) do
+            %i.sidebar__user__contents__icon-chat.fas.fa-cog
+        %li
+          = link_to new_group_path do
+            %i.sidebar__user__contents__icon-edit.fas.fa-edit
+  - current_user.groups.each do |group|
+    = link_to link_to group_messages_path(group) do
+      .sidebar__groups
+        .sidebar__groups__title
+          = group.group_name
+        .sidebar__groups__text
+          = group.show_last_message
+
+        / group_messages_path(group)

@@ -1,0 +1,34 @@
+= render 'shared/sidebar'
+
+.chat
+
+  / ヘッダー
+  .chat__header
+    .chat__header__groups
+      .chat__header__groups__title グループ１
+      .chat__header__groups__members Menbers: member1,menber2
+    = link_to 'Edit',"#", class: "chat__header__edit"
+
+  / ここまで
+  / チャット部分
+  .chat__message
+    %p.chat__message__user
+      オール
+      %span.chat__message__user__created-at 2018/11/28
+    %p.chat__message__text こんにちは
+
+  / ここまで
+  .chat__footer
+    = form_for [@group, @message] ,html: {class: 'chat__footer__form'} do |f|
+      = f.text_field :content,class: "chat__footer__form__text",placeholder: " type amessage"
+      .chat__footer__form__mask
+        = f.label :image, class: "chat__footer__form__mask__label-image" do
+          %i.far.fa-image
+          = f.file_field :image, id: "message_image"
+
+
+        =f.submit 'Send',class: 'chat__footer__form__mask__send'
+      / %input(type = "submit" class = "chat__footer__form__send" value = "Send")
+
+
+

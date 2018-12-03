@@ -1,0 +1,117 @@
+.chat{
+
+  background-color: #FAFAFA;
+  height: 100vh;
+  position: relative;
+  &__header{
+    height: 100px;
+    width: 100vw;
+    background-color: white;
+    border-bottom: 1px solid #eeeeee;
+    &__groups{
+      margin-left:340px;
+      float: left;
+      &__title{
+        padding-top: 35px;
+        margin-bottom: 15px;
+        color: #333333;
+        font-size: 20px;
+
+      }
+      &__members{
+        font-size: 12px;
+        color: #999999;
+      }
+
+    }
+    &__edit{
+      display: block;
+      margin-right: 40px;
+      float: right;
+      color: #38AEF0;
+      border: 2px solid #38AEF0;
+      padding: 10px 20px;
+      margin-top: 28px;
+      text-decoration: none;
+    }
+  }
+  // メッセージ部分
+  &__message{
+    float: left;
+    margin: 46px 40px 40px 340px;
+
+
+    &__user{
+
+      font-size: 16px;
+      font-weight: bold;
+      font-color: #434A54;
+      margin-bottom: 10px;
+      &__created-at{
+        font-size: 12px;
+        color: #999999;
+        margin-left:10px;
+
+      }
+    }
+    &__text{
+
+      font-color: #434A54;
+      font-size: 14px;
+
+    }
+
+  }
+  &__footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #DDDDDD;
+    height: 100px;
+    width: 100vw;
+    &__form{
+      position: relative;
+      height: 100px;
+      &__text{
+          float: left;
+          width: 65%;
+          margin-left: 340px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          height: 50px;
+      }
+      &__mask{
+        position:relative;
+        width: 200px;
+        height: 100px;
+        left: 1200px;
+        &__label-image{
+          position: absolute;
+          right: 145px;
+          top: 33px;
+        //   bottom: 15px;
+        //   padding:20px 0 ;
+        //   font-size: 20px;
+          input[type=file]{
+            display: none;
+          }
+          i{
+            // margin-top: 40px;
+          }
+         }
+        &__send{
+          position: absolute;
+          right: 0;
+          top: 20px;
+          // float: right;
+          // z-index: 10;
+          background-color: #38AEF0;
+          color: white;
+          padding: 15px 27px;
+          // margin:20px 40px 20px 15px;
+        }
+
+
+      }
+    }
+  }
+}
