@@ -2,10 +2,12 @@
 
   background-color: #FAFAFA;
   height: 100vh;
-  position: relative;
+
   &__header{
     height: 100px;
     width: 100vw;
+    position: fixed;
+    z-index: 9;
     background-color: white;
     border-bottom: 1px solid #eeeeee;
     &__groups{
@@ -38,7 +40,10 @@
   // メッセージ部分
   &__message{
     float: left;
-    margin: 46px 40px 40px 340px;
+    margin: 110px 40px 40px 340px;
+    width: 76vw;
+    height: 68vh;
+    overflow: scroll;
 
 
     &__user{
@@ -58,6 +63,7 @@
 
       font-color: #434A54;
       font-size: 14px;
+      margin-bottom: 10px;
 
     }
 

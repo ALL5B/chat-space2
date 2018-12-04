@@ -12,10 +12,16 @@
   / ここまで
   / チャット部分
   .chat__message
-    %p.chat__message__user
-      オール
-      %span.chat__message__user__created-at 2018/11/28
-    %p.chat__message__text こんにちは
+    - @messages.each do |message|
+      %p.chat__message__user
+        = message.user.name
+        %span.chat__message__user__created-at
+          = message.created_at
+
+      - if message.image.present?
+        %img{src: "#{message.image}",height: "200",width: "200" }
+      %p.chat__message__text
+        = message.content
 
   / ここまで
   .chat__footer
