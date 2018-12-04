@@ -8,22 +8,12 @@
       .chat__header__groups__title グループ１
       .chat__header__groups__members Menbers: member1,menber2
     = link_to 'Edit',"#", class: "chat__header__edit"
-
   / ここまで
   / チャット部分
   .chat__message
-    - @messages.each do |message|
-      %p.chat__message__user
-        = message.user.name
-        %span.chat__message__user__created-at
-          = message.created_at
-
-      - if message.image.present?
-        %img{src: "#{message.image}",height: "200",width: "200" }
-      %p.chat__message__text
-        = message.content
-
+    = render partial: "message", collection: @messages
   / ここまで
+  / フッター
   .chat__footer
     = form_for [@group, @message] ,html: {class: 'chat__footer__form'} do |f|
       = f.text_field :content,class: "chat__footer__form__text",placeholder: " type amessage"
@@ -32,9 +22,7 @@
           %i.far.fa-image
           = f.file_field :image, id: "message_image"
 
-
         =f.submit 'Send',class: 'chat__footer__form__mask__send'
-      / %input(type = "submit" class = "chat__footer__form__send" value = "Send")
-
+  / ここまで
 
 
