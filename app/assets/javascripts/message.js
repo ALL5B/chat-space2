@@ -1,6 +1,3 @@
-document.addEventListener('turbolinks:load', function() {
-  componentHandler.upgradeDom();
-});
 $(function(){
 
   function scrollBottom(){
