@@ -22,7 +22,6 @@ $(function(){
 
   $('#user-search-field').on("keyup",function(){
     var input = $(this).val();
-    var formData = new FormData(this);
     $.ajax({
       type: 'GET',
       url: '/users',
