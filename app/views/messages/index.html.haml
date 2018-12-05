@@ -5,9 +5,13 @@
   / ヘッダー
   .chat__header
     .chat__header__groups
-      .chat__header__groups__title グループ１
-      .chat__header__groups__members Menbers: member1,menber2
-    = link_to 'Edit',"#", class: "chat__header__edit"
+      .chat__header__groups__title
+        = @group.group_name
+      .chat__header__groups__members
+        Members:
+        - @members.each do |member|
+          = member.user.name
+    = link_to 'Edit',"edit", class: "chat__header__edit"
   / ここまで
   / チャット部分
   .chat__message

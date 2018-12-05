@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action :set_group
 
   def index
+    @members = @group.user_groups
     @message = Message.new
     @messages = @group.messages.includes(:user).order("created_at ASC")
   end
