@@ -1,5 +1,5 @@
 $(function(){
-  var user_list = $('#user-search-result');
+  var userList = $('#user-search-result');
   var userAdd = $('#chat-group-users')
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
@@ -7,7 +7,7 @@ $(function(){
                   <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
                 </div>`;
 
-    user_list.append(html);
+    userList.append(html);
   }
 
   function appendAddUser(id,name){
@@ -30,7 +30,7 @@ $(function(){
     })
 
     .done(function(users){
-      user_list.empty();
+      userList.empty();
       if (users.length !== 0){
         users.forEach(function(user){
           appendUser(user);
