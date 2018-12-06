@@ -1,4 +1,4 @@
-%p.chat__message__user
+%p.chat__message__user{message: {id: "#{message.id}"}}
   = message.user.name
   %span.chat__message__user__created-at
     = message.created_at
