@@ -5,6 +5,8 @@ class MessagesController < ApplicationController
     @members = @group.user_groups
     @message = Message.new
     @messages = @group.messages.includes(:user).order("created_at ASC")
+    @currentmessage = params[:messageid]
+    @newmessages = @group.messages.where("id > ?", @currentmessage.to_i)
     respond_to do |format|
       format.html
       format.json
