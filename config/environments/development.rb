@@ -25,6 +25,9 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+  config.assets.precompile += ['message.js']
+  config.assets.precompile += ['automatic-update.js']
+  config.assets.precompile += ['search.js']
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
