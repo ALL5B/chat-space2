@@ -1,7 +1,7 @@
 %p.chat__message__user{message: {id: "#{message.id}"}}
   = message.user.name
   %span.chat__message__user__created-at
-    = message.created_at
+    = message.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分%-S秒")
 
 - if message.image.present?
   = image_tag "#{message.image}", size: "200x200"
