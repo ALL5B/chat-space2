@@ -12,7 +12,7 @@ $(function(){
 
   function appendAddUser(id,name){
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-                  <input name='group[user_ids][]' type='hidden' value='${id}'>
+                  <input class="userids" name='group[user_ids][]' type='hidden' value='${id}'>
                   <p class='chat-group-user__name'>${name}</p>
                   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                 </div>`;
@@ -22,6 +22,7 @@ $(function(){
 
   $('#user-search-field').on("keyup",function(){
     var input = $(this).val();
+
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -31,11 +32,20 @@ $(function(){
 
     .done(function(users){
       userList.empty();
+      var arr = $(".userids").map(function(){
+        return $(this).val();
+      }).get();
+
+
       if (users.length !== 0){
         users.forEach(function(user){
-          appendUser(user);
+          var strUserId = String(user.id);
+          if ($.inArray(strUserId, arr) === -1){
+            appendUser(user);
+          }
         });
       }
+
     })
     .fail(function(){
       alert('ユーザー検索に失敗しました。')
