@@ -8,7 +8,6 @@
   &__user{
     height: 100px;
     background-color: #253141;
-    margin-bottom: 20px;
     &__contents{
       height: 100px;
       margin: 0 20px;
@@ -34,10 +33,17 @@
 
     }
   }
-  // グループ一覧
+  //
+  a{
+    text-decoration: none;
+  }
   &__groups{
-    margin: 0 20px 30px 20px;
+    padding: 0 20px 0px 20px;
+  &:hover{
+    background-color: lighten($sidebar-bg,10%);
+  }
     &__title{
+      padding-top: 20px;
       font-size: 15px;
       color: white;
       margin-bottom: 5px;
@@ -45,7 +51,7 @@
     &__text{
       font-size: 11px;
       color: white;
-      margin-bottom: 40px;
+      padding-bottom: 20px;
     }
   }
 
