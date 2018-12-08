@@ -6,7 +6,7 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 
 
-lock '<Capistranoのバージョン>'
+lock '3.11.0'
 
 set :application, 'chat-space2'
 set :repo_url,  'git@github.com:ALL5B/chat-space2.git'
